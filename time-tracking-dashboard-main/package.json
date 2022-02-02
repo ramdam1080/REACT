@@ -1,0 +1,19 @@
+{
+  "name": "time-tracking-dashboard-main",
+  "version": "1.0.0",
+  "description": "Le challenge est de créer un dashboard similaire à celui des exemples fournis. Vous trouverez les ressources habituelles (design, style guide) dans le dossier `exo-ressources`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.3"
+  },
+  "devDependencies": {
+    "sass": "^1.49.4"
+  }
+}

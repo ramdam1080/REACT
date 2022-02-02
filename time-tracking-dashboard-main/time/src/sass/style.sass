@@ -1,0 +1,110 @@
+@import './_variables'
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'
+@import './_icones'
+@import './_fonts'
+body
+    background-color: hsl(226, 43%, 10%)
+    
+    display: flex
+    flex-direction: column
+    justify-content: center
+.gridd
+    display: grid
+    grid-template-columns: 25% 25% 25% 25%
+
+    grid-gap: 20px
+.jeremy
+    grid-row: 1/3
+    border-radius: 20px
+    background-color: hsl(246, 80%, 60%)
+    p
+        color: #b9ababbd
+.temps
+    p
+        cursor: pointer
+    p:hover
+        color: white
+    h1
+        
+    img
+        border: 3px solid lightgray
+        border-radius: 50%
+.card
+    border-radius: 20px
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 80%
+    background-color: hsl(235, 46%, 20%)
+.card:hover
+    background-color: lightblue
+.logo
+    border-radius: 20px
+    position: relative
+    overflow: hidden
+
+.card1
+    border-radius: 20px
+    padding: 50px 0
+    background-color: hsl(235, 46%, 20%)
+    h1
+        font-size: 50px
+.orange
+    background-color: hsl(15, 100%, 70%)
+
+.blue
+    background-color: hsl(195, 74%, 62%)
+
+.rose
+    background-color: hsl(348, 100%, 68%)
+.green
+    background-color: hsl(145, 58%, 55%)
+
+.mauve
+    background-color: hsl(264, 64%, 52%)
+.jaune
+    background-color: hsl(43, 84%, 65%)
+.gogo
+    height: 20%
+    overflow: hidden
+.c
+    margin: 0 10%
+
+@media (max-width: 576px)
+    .gridd
+        grid-template-columns: 100%
+        grid-template-rows: 20% 20% 20% 20% 20% 20%  
+    .card1
+        padding: 0 !important
+    .temps
+        display: flex
+        align-items: center
+        justify-content: space-around
+        
+        p
+            margin: 0 !important
+            padding: 20px 0
+
+    .jeremy
+        background-color: hsl(235, 46%, 20%)
+        grid-row: 1/2
+    .card1
+        background-color: hsl(246, 80%, 60%)
+        display: flex
+        align-items: center
+        gap: 10px
+        h1
+            font-size: 17px
+            margin: 0 !important
+        p
+            margin: 0 !important
+    .c
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 10px
+        p
+            margin: 0 !important
+        
+    section
+        padding-bottom: 50px 0 !important
