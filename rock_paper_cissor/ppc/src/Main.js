@@ -6,7 +6,7 @@ class Main extends React.Component {
     render() {
         
         return (
-            <div className={this.props.color} onClick={() => this.props.stocks(this.props.color, this.props.main, true,0)} >
+            <div className={this.props.color} onClick={() => this.props.stocks(this.props.color, this.props.main, true)} >
                 <div>
                     <img src={this.props.main} alt="" />
                 </div>

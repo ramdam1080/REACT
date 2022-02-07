@@ -11,16 +11,82 @@ import Combat from "./Combat"
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { stock: undefined, img: undefined, affichage: false , score : 0   }
-    this.ola = {...this.state}
+    this.state = { stock: undefined, img: undefined, affichage: false , score : 0 ,choixordi: "",h2:""  }
+    // this.ola = {...this.state}
   }
   change = (x, y, z, /** @type {number} */ w) => {
-    this.setState({ stock: x, img: y, affichage: z , score : this.state.score + w })
+    let copy = {...this.state}
+    copy.stock = x
+    copy.img = y
+    copy.affichage = z
+    let random = Math.floor(Math.random() * 3) + 1
+    copy.choixordi = random
+    // let  h2 = ""
+    if (copy.stock == "blue" && random == 1 ) {
+        copy.h2 = "YOU LOSE"
+        // this.props.point = this.props.point -=1
+        copy.score--
+        
+      }
+      
+      else if (copy.stock == "red" && random == 1 ) {
+        copy.h2 = "YOU WIN"
+        
+        copy.score++
+      }
+      else if (copy.stock == "orange" && random == 1 ) {
+        copy.h2 = "DRAWN"
+       
+      }
+      else if (copy.stock == "orange" && random == 2 ) {
+        copy.h2 = " YOU LOSE"
+        
+        copy.score--
+      }
+      else if (copy.stock == "red" && random == 2 ) {
+        copy.h2 = "DRAWN"
+        
+      }
+      else if (copy.stock == "blue" && random == 2 ) {
+        copy.h2 = "YOU LOSE"
+        copy.score--
+        
+      }
+      else if (copy.stock == "blue" && random == 2 ) {
+        copy.h2 = "YOU WIN"
+        
+        copy.score++
+        
+      }
+      else if (copy.stock == "blue" && random == 3 ) {
+        copy.h2 = "DRAWN"
+        
+      }
+      
+      else if (copy.stock == "orange" && random == 3 ) {
+        copy.h2 = "YOU WIN"
+        
+        copy.score++
+    }
+    
+    else if (copy.stock == "red" && random == 3 ) {
+        copy.h2 = "YOU LOSE"
+        
+        copy.score--
+    }
+    this.setState(copy)
+    console.log(copy);
+
+    // this.setState({ stock: x, img: y, affichage: z , score : this.state.score + w })
   }
  
-  // majScore = (/** @type {number} */ param) => {
-  //   this.setState({ score: this.state.score + param})
-  // }
+  olala = (/** @type {number} */ s)=>{
+    let ola = {...this.state}
+    ola.score += s
+    console.log(ola);
+    console.log(ola.score += s);
+    // this.setState(ola)
+}
   render() {
     return (
       <div className="mt-5">
@@ -44,7 +110,7 @@ class App extends React.Component {
 
           </div>}
         {this.state.affichage === true &&
-          <Combat  jsp={this.change} img={this.state.img} stocks={this.state.stock} />}
+          <Combat h2={this.state.h2} random = {this.state.choixordi}  ola = {this.olala} jsp={this.change} img={this.state.img} stocks={this.state.stock} />}
       </div>
 
     )

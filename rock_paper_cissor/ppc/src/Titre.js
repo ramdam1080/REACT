@@ -9,7 +9,7 @@ class Titre extends React.Component {
                 <h2 className="text-white">ROCK <br />PAPER <br />SCISSORS</h2>
                 <div className="text-center bg-white px-5 rounded-3">
                     <h3>score</h3>
-                    <h2 className="le12 text-secondary">{this.props.score}</h2>
+                    <h2 className="le12 text-secondary">{+this.props.score}</h2>
                 </div>
             </div>
 
