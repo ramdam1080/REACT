@@ -1,0 +1,98 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'
+body
+    background-color: #10093bf6
+    // background: radial-gradient(#12165ab7, #12165ab7,#0f0b41f6,#10093bf6)
+
+    // height: 100vh
+
+.c
+    border: 2px white solid
+    width: 50%
+    border-radius: 25px
+.le12
+    font-size: 70px
+.test
+    height: 500px
+
+.orange
+    border-radius: 50%
+    background-color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 200px
+    width: 200px
+    border: 20px solid orange
+    box-shadow: inset 3px 3px 3px 0 gray
+.blue
+    border-radius: 50%
+    background-color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 200px
+    width: 200px
+    border: 20px solid blue
+    box-shadow: inset 3px 3px 3px 0 gray
+.red
+    border-radius: 50%
+    background-color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 200px
+    width: 200px
+    border: 20px solid red
+    box-shadow: inset 3px 3px 3px 0 gray
+
+.triangle
+    background-image: url('../images/bg-triangle.svg')
+    width: 550px
+    height: 400px
+    background-repeat: no-repeat
+    background-size: 50%
+    background-position: center
+.rule
+    position: fixed
+    bottom: 10px
+    right: 10px
+    border: white 2px solid
+    padding: 5px 30px
+    color: white
+    border-radius: 10px
+
+.gapp
+    gap: 15%
+.again
+    border: none
+    border-radius: 5px
+@media screen and ( max-width: 576px )
+    .triangle
+        width: 100%
+        background-size: 90%
+
+    .orange
+        height: 100px
+        width: 100px
+        text-align: center
+        img
+            width: 50%
+    .red
+        height: 100px
+        width: 100px
+        text-align: center
+        img
+            width: 50%
+    .blue
+        height: 100px
+        width: 100px
+        text-align: center
+        img
+            width: 50%
+    .gapp
+        flex-direction: column !important
+    .c
+        width: 100%
