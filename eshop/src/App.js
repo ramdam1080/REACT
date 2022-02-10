@@ -16,7 +16,7 @@ const App = () => {
 
   const set = (i) => {
     let newArticle = [...article]
-    if (argent > 0 && newArticle[i].stock > 0) {
+    if (argent > newArticle[i].prix && newArticle[i].stock > 0) {
       setArgent(argent -= newArticle[i].prix)
       if (newArticle[i].stock > 0) {
         newArticle[i].stock -= 1
@@ -26,63 +26,36 @@ const App = () => {
     } else if (argent <= 0) {
       setArgent(0)
     
-    }
-
-    if (newArticle[i].stock == 0) {
-      newArticle[i].color = "bgr"
-    } else if (newArticle[i].stock == 1) {
-      newArticle[i].color = "bgo"
-    } else {
-      newArticle[i].color = ""
-
-    }
+    }  
     setArticle(newArticle)
 
     console.log(panier);
-
   }
   return (
     <div className='c'>
       <h1>Mon argent: {argent}</h1>
       <div className='d-flex  d gap-4 container'>
-
         {article.map((element, i) =>
-
           <Cards
             key={i}
             article={element}
             test={() => set(i)}
             panier={panier}
           />
-
         )}
       </div>
       <div className=''>
         <p>mon panier :</p>
-
       </div>
       <div>
         {
           panier.map((article, i) => (
             <div className='d-flex gap-3 ' key={i} > <p>Produit : {article.nom} || unité : 1</p> <button className='mb-3 text-white rounded-3 py-1 px-3 bg-danger' onClick={(e) => {
-
-              setPanier(kiki => {
-                let ret = [...kiki]
+                let ret = [...panier]
                 ret.splice(ret.indexOf(article), 1)
-                if (article.stock == 0) {
-                  article.color = "bgr"
-                } else if (article.stock == 1) {
-                  article.color = "bgo"
-                } else {
-                  article.color = ""
-
-                }
-                setArgent(argent += article.prix/2)
-                return ret
-              })
-
+                setArgent(argent += article.prix)
+                setPanier(ret)
               article.stock += 1;
-
             }}>rendre</button> </div>
 
           ))

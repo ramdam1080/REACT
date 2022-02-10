@@ -8,7 +8,7 @@ const Cards = (props) => {
             <div>
                 <img width="300" src= {props.article.img} alt="" />
             </div>
-            <div className={props.article.color} >
+            <div className={props.article.stock === 0 ? "bg-danger" : props.article.stock === 1 ? "bg-warning" : ""} >
                 <div className='container'>
                 <h2 className=''>{props.article.titre}</h2>
                 <p>prix : {props.article.prix}</p>
